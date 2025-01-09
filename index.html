@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        
+
         <br>
       
 <div class="row center">
@@ -178,16 +178,48 @@
 </div>
 <br>
 
-<div class="row center">
 
-        <img src="img/guests/wagle.jpeg" alt="" width="220px" class="circle">
-        <img src="img/guests/johnson.jpeg" alt="" width="220px" class="circle">
+<div class="row center">
+    <!-- Flex container for the images -->
+    <div class="images-container">
+        <img src="img/guests/burns.png" alt="" width="220px" class="circle">
+        <img src="img/guests/febbo.png" alt="" width="220px" class="circle">
+    </div>
 
     <p class="flow-text"><br>
-        <strong class ="grey-text text-darken-2">We are proud to present <br><b>Nikhil Wagle, MD <br><i>Vice President & Global Head of Translational Medicine, Genentech</i></b><br>and<br><b>Bruce Johnson, MD<br><i>Professor of Medicine, Harvard Medical School</i></b><br> as keynote speakers</strong></p>
-  <br>
-                  <div class="divider"></div>
+        <strong class ="grey-text text-darken-2">We are proud to present <br><b>Kathleen Burns, MD, PhD<br><i>Chair of Dept. of Oncologic Pathology, Dana-Farber Cancer Institute</i></b><br>and<br><b>Phillip Febbo, MD<br><i>Senior VP & Chief Medical Officer, Illumina</i></b><br> as keynote speakers</strong></p>
+    <br>
+    <div class="divider"></div>
+</div>
 
+<div class="parallax">
+    <div id="particles-js"></div>
+</div>
+
+<style>
+    /* Flexbox to arrange the images side by side by default */
+    .images-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;  /* Adds space between the images */
+        align-items: center;
+        flex-wrap: wrap;  /* Ensures wrapping happens if the container is small */
+    }
+
+    /* Make sure the images are responsive */
+    .images-container img {
+        max-width: 100%; /* Ensures images scale with the container */
+        height: auto; /* Maintains aspect ratio */
+    }
+
+    /* Media query for screen widths 400px or less */
+    @media (max-width: 400px) {
+        .images-container {
+            flex-direction: column;  /* Stack the images vertically */
+            align-items: center;  /* Center the images horizontally */
+        }
+    }
+</style>
 
 <div class="parallax">
 <div id="particles-js">
