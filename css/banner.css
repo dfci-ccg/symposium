@@ -81,20 +81,21 @@
 }
 
 #right-banner .deadline-day {
-  font-size: 2em;
+  font-size: 2.3em;
+  font-weight: 600;
 }
 
-#right-banner .location {
+#right-banner .location-container {
   display: flex;
   flex-direction: column;
   gap: 5px;
   font-size: 25px;
 }
 
-#right-banner .location :first-child{
+#right-banner .location-container :first-child{
   font-weight: 600;
 }
 
-#right-banner .location :nth-child(2){
+#right-banner .location-container :nth-child(2){
   font-style: italic;
 }

@@ -1,6 +1,6 @@
 let x = setInterval(function () {
   let now = new Date().getTime();
-  let t = deadlineMilliSec - now;
+  let t = DEADLINE_DATE.getTime() - now;
 
   // Check if the deadline has passed
   if (t < 0) {

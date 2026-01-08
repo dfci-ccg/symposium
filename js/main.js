@@ -11,6 +11,8 @@ const bannerLoaded = loadPartial('#banner-container', 'banner.html');
  * All dynamic filling should be done on this file in order to not have race conditions.
  */
 Promise.all([navLoaded, bannerLoaded]).then(() => {
-  $('.deadline-day').html(day);
-  $('.deadline-year').html(deadline.getFullYear());
+  $('.deadline-day').html(DEADLINE_DATE_STRING);
+  $('.deadline-year').html(DEADLINE_DATE.getFullYear());
+  $('.location').html(LOCATION);
+  $('.location-address').html(LOCATION_ADDRESS);
 });
