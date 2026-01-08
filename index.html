@@ -29,18 +29,30 @@
       type="text/css"
     />
     <link
-      href="css/banner.css"
-      media="screen,projection"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
       href="css/materialize-social.css"
       media="screen,projection"
       rel="stylesheet"
       type="text/css"
     />
     <link href="img/favicon.png" rel="icon" />
+    <link
+      href="css/banner.css"
+      media="screen,projection"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="css/webcast.css"
+      media="screen,projection"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="css/keynote.css"
+      media="screen,projection"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
 
   <body>
@@ -95,39 +107,37 @@
     </div>
 
     <div class="row center">
-      <div class="flow-text">
-        <strong class="grey-text text-darken-2">
-          Join us <b><span class="deadline-day"></span></b><br />at the<br />
-          <b>Dana-Farber <span class="location"></span></b>
-          <br />
-          <i class="location-address"></i>
-        </strong>
+      <div class="flow-text grey-text text-darken-2">
+        Join us <b><span class="deadline-day"></span></b><br />at the<br />
+        <b>Dana-Farber <span class="location"></span></b>
+        <br />
+        <i class="location-address"></i>
       </div>
       <br />
-      <div class="flow-text">
-        <div class="grey-text text-darken-2"></div>
-        <p>
+      <div id="webcast-container">
+        <div class="flow-text grey-text text-darken-2">
           Tune in <span class="deadline-short-day"></span> at
           <b class="livestream-time"></b>
-        </p>
-        to livestream the symposium webcast
+          <br />
+          to livestream the symposium webcast
+        </div>
+        <div>
+          <button
+            class="morning-webcast waves-effect waves-light btn-large yellow darken-3"
+            disabled
+          >
+            Morning Webcast
+          </button>
+        </div>
+        <div>
+          <button
+            class="afternoon-webcast waves-effect waves-light btn-large yellow darken-3"
+            disabled
+          >
+            Afternoon Webcast
+          </button>
+        </div>
       </div>
-
-      <br />
-
-      <a
-        class="waves-effect waves-light btn-large yellow darken-3"
-        href="https://mgb.mediasite.com/Mediasite/Play/ee63982960824edea40b96ac3d02db481d"
-        >Morning Webcast</a
-      >
-
-      <br /><br />
-
-      <a
-        class="waves-effect waves-light btn-large yellow darken-3"
-        href="https://mgb.mediasite.com/Mediasite/Play/c2aad827cf2e42a1b807b1b274abc6b21d"
-        >Afternoon Webcast</a
-      >
     </div>
 
     <br />
@@ -135,45 +145,15 @@
 
     <br />
 
-    <div class="row center">
+    <div id="keynote-container">
       <div class="grey-text text-darken-2">
-        <p>We proudly present this year's keynote speakers</p>
+        <p id="keynote-title">
+          We proudly present this year's keynote speakers
+        </p>
         <div id="keynote-speakers-container"></div>
       </div>
-      <br />
       <div class="divider"></div>
     </div>
-
-    <style>
-      /* Flexbox to arrange the images side by side by default */
-      .images-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        /* Adds space between the images */
-        align-items: center;
-        flex-wrap: wrap;
-        /* Ensures wrapping happens if the container is small */
-      }
-
-      /* Make sure the images are responsive */
-      .images-container img {
-        max-width: 100%;
-        /* Ensures images scale with the container */
-        height: auto;
-        /* Maintains aspect ratio */
-      }
-
-      /* Media query for screen widths 400px or less */
-      @media (max-width: 400px) {
-        .images-container {
-          flex-direction: column;
-          /* Stack the images vertically */
-          align-items: center;
-          /* Center the images horizontally */
-        }
-      }
-    </style>
   </body>
 
   <div class="section">
@@ -309,7 +289,6 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>
   </div>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>

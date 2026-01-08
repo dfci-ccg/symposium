@@ -39,10 +39,20 @@ const DEADLINE_SHORT_DATE_STRING = formatOnlyMonthDay(DEADLINE_DATE);
 const LIVESTREAM_TIME = addMinutesAndFormat(DEADLINE_DATE, 30);
 const LOCATION = 'Jimmy Fund Auditorium';
 const LOCATION_ADDRESS = '35 Binney Street, Boston, MA 02115';
+
+/**
+ * Links
+ */
 const ABOUT_HREF =
   'https://www.dana-farber.org/research/departments-centers-and-labs/integrative-research-centers/center-for-cancer-genome-discovery/';
 const REGISTRATION_HREF = 'https://forms.gle/ZCZWY65VEQ45zsNp6';
 const AGENDA_HREF = `agendas/${DEADLINE_DATE.getFullYear()}.pdf`;
+const MORNING_WEBCAST_HREF = 'https://mgb.mediasite.com/Mediasite/Play/ee63982960824edea40b96ac3d02db481d';
+const AFTERNOON_WEBCAST_HREF = 'https://mgb.mediasite.com/Mediasite/Play/c2aad827cf2e42a1b807b1b274abc6b21d';
+
+/**
+ * Speakers
+ */
 const KEYNOTE_SPEAKERS = [
   {
     name: 'Fei Chen, PhD',

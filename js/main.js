@@ -55,4 +55,14 @@ Promise.all([navLoaded, bannerLoaded])
     $('a.registration').attr('href', REGISTRATION_HREF);
     $('a.agenda').attr('href', AGENDA_HREF);
     $('a.about').attr('href', ABOUT_HREF);
+
+    // Webcast buttons
+    $('button.morning-webcast').prop('disabled', false);
+    $('button.morning-webcast').on('click', () => {
+      window.location.href = MORNING_WEBCAST_HREF;
+    })
+    $('button.afternoon-webcast').prop('disabled', false);
+    $('button.afternoon-webcast').on('click', () => {
+      window.location.href = AFTERNOON_WEBCAST_HREF;
+    })
   });
