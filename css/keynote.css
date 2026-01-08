@@ -14,6 +14,7 @@
 #keynote-title {
   font-size: 26px;
   padding: 20px;
+  text-align: center;
 }
 
 #keynote-speakers-container .caption {
@@ -30,10 +31,10 @@
   font-weight: bold;
 }
 
-#keynote-speakers-container > .speaker-container:nth-of-type(even) .speaker {
+#keynote-speakers-container > .speaker-container:nth-of-type(odd) .speaker {
   color: #1e88e5;
 }
 
-#keynote-speakers-container > .speaker-container:nth-of-type(odd) .speaker {
+#keynote-speakers-container > .speaker-container:nth-of-type(even) .speaker {
   color: #fb8c00;
 }
