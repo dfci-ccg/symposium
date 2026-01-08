@@ -4,13 +4,14 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>CCG Symposium 2025 | Home</title>
+  <title>CCG Symposium | Home</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css" />
   <link href="css/materialize.min.css" media="screen,projection" rel="stylesheet" type="text/css" />
   <link href="css/style.css" media="screen,projection" rel="stylesheet" type="text/css" />
+  <link href="css/banner.css" media="screen,projection" rel="stylesheet" type="text/css" />
   <link href="css/materialize-social.css" media="screen,projection" rel="stylesheet" type="text/css" />
   <link href="img/favicon.png" rel="icon">
 </head>
@@ -26,8 +27,7 @@
     <div class="container">
       <div class="row center">
         <div class="gfg">
-          <img src="img/ccg_logo_alt.png" srcset="img/ccg_logo_alt.png 500w, 
-                                     img/ccg_logo.png" sizes="(min-width:992px) 100vw">
+          <div id="banner-container"></div>
         </div>
       </div>
     </div>
@@ -36,7 +36,6 @@
   <br>
 
   <div class="row center">
-
     <div id="clockdiv">
       <div>
         <span class="days" id="day"></span>
@@ -70,21 +69,16 @@
       font-size: small;
     }
   </style>
-
-
   <br>
-
   <div class="row center">
-
     <a class="waves-effect waves-light btn-large linkedin"
       href="https://docs.google.com/forms/d/e/1FAIpQLScuDEFAcvPMx43AKzjFVj-ldw7Z3uM3o5O2-CAocFxZSpXT2A/viewform">REGISTER</a>
-
   </div>
 
   <div class="row center">
     <p class="flow-text">
       <strong class="grey-text text-darken-2">
-        Join us <b><span id="deadline-day"></span></b><br>at the<br>
+        Join us <b><span class="deadline-day"></span></b><br>at the<br>
         <b>Dana-Farber Jimmy Fund Auditorium</b>
         <br>
         <i>35 Binney Street, Boston, MA 02115</i>
@@ -273,9 +267,10 @@
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="js/particles.js"></script>
 <script src="js/particles.min.js"></script>
-<script src="js/app.js"></script>
-<script src="js/main.js"></script>
+<script src="js/constants.js"></script>
 <script src="js/deadline.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
 
 <script>
 

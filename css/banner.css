@@ -1,0 +1,41 @@
+.v-line {
+  width: 2px;
+  background-color: #ffffff;
+}
+
+#banner-container {
+  width: 100%;
+}
+
+#banner {
+  display: flex;
+  width: 100%;
+}
+
+#banner .banner-half {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px
+}
+
+#banner #names {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#banner #institute-name {
+  width: 49%;
+  font-weight: bold;
+}
+#banner #ccg-name {
+  width: 49%
+}
+
+#banner .symposium-name {
+  font-weight: bold;
+}
+#banner .symposium-location {
+
+}

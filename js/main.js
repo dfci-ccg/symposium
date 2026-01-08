@@ -1,16 +1,16 @@
+function loadPartial(selector, partial) {
+  return new Promise((resolve) =>
+    $(selector).load(`/partials/${partial}`, resolve)
+  );
+}
+
+const navLoaded = loadPartial('#nav-container', 'nav.html');
+const bannerLoaded = loadPartial('#banner-container', 'banner.html');
+
 /**
- * Loads in HTML partials.
+ * All dynamic filling should be done on this file in order to not have race conditions.
  */
-// async function loadPartial(selector, url) {
-//   const res = await fetch(url);
-//   const partialHTML = await res.text();
-//   alert('hfdskl')
-//   alert(partialHTML);
-//   $(selector).html(partialHTML)
-// }
-
-$(function() {
-  alert('hi')
-  $("#nav-container").load("/partials/nav.html");
-
-})
+Promise.all([navLoaded, bannerLoaded]).then(() => {
+  $('.deadline-day').html(day);
+  $('.deadline-year').html(deadline.getFullYear());
+});

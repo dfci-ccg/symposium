@@ -1,18 +1,6 @@
-const day = 'March 20, 2026';
-const time = '08:30:00';
-const deadline = new Date(`${day} ${time}`).getTime();
-
-/**
- * Loading in days + time for deadlines
- */
-$(function () {
-  $('#deadline-day').html(day);
-});
-
-
 let x = setInterval(function () {
   let now = new Date().getTime();
-  let t = deadline - now;
+  let t = deadlineMilliSec - now;
 
   // Check if the deadline has passed
   if (t < 0) {
