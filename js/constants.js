@@ -8,17 +8,34 @@ function formatDateWithOrdinal(date) {
 
   return `${day}${suffix}`;
 }
-function formatFullDate(date) {
+function formatOnlyMonthDay(date) {
   const day = formatDateWithOrdinal(date);
   const month = date.toLocaleString("en-US", { month: "long" });
+
+  return `${month} ${day}`;
+}
+function formatFullDate(date) {
   const year = date.getFullYear();
 
-  return `${month} ${day}, ${year}`;
+  return `${formatOnlyMonthDay(date)}, ${year}`;
+}
+function addMinutesAndFormat(date, minutesToAdd) {
+  const d = new Date(date.getTime());
+  d.setMinutes(d.getMinutes() + minutesToAdd);
+
+  return d.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true
+  });
 }
 
-const day = 'March 20, 2026';
-const time = '08:30:00';
-const DEADLINE_DATE = new Date(`${day} ${time}`);
+const DEADLINE_DATE = new Date(`March 20, 2026 08:30:00`);
 const DEADLINE_DATE_STRING = formatFullDate(DEADLINE_DATE);
+/**
+ * Only contains month and day
+ */
+const DEADLINE_SHORT_DATE_STRING = formatFullDate(DEADLINE_DATE);
+const LIVESTREAM_TIME = addMinutesAndFormat(DEADLINE_DATE, 30);
 const LOCATION = "Jimmy Fund Auditorium";
 const LOCATION_ADDRESS = "35 Binney Street, Boston, MA 02115";

@@ -1,3 +1,11 @@
+/**
+ * Adds left padding of 0s to dates components.
+ * @param {*} num 
+ * @returns 
+ */
+function lpadDate(num) {
+  return num.toString().padStart(2, "0");
+}
 let x = setInterval(function () {
   let now = new Date().getTime();
   let t = DEADLINE_DATE.getTime() - now;
@@ -15,12 +23,12 @@ let x = setInterval(function () {
     let days = Math.floor(t / (1000 * 60 * 60 * 24));
     let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((t % (1000 * 60)) / 1000);
+    // let seconds = Math.floor((t % (1000 * 60)) / 1000);
 
     // Update countdown display
-    document.getElementById('day').innerHTML = days;
-    document.getElementById('hour').innerHTML = hours;
-    document.getElementById('minute').innerHTML = minutes;
-    document.getElementById('second').innerHTML = seconds;
+    $('#day').html(lpadDate(days));
+    $('#hour').html(lpadDate(hours));
+    $('#minute').html(lpadDate(minutes));
+    // $('#second').html(lpadDate(seconds));
   }
 }, 300);
