@@ -1,0 +1,33 @@
+
+.speaker-type-title {
+  text-align: center;
+  font-weight: 600;
+  padding: 7px;
+}
+
+.general-speaker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.speaker-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 5px;
+  font-size: 20px;
+}
+
+.speaker-container .name {
+  font-weight: bold;
+}
+
+.speaker-container .title {
+  font-style: italic;
+}

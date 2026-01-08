@@ -14,10 +14,9 @@ let x = setInterval(function () {
   if (t < 0) {
     clearInterval(x); // Stop the countdown
     // Set all time units to 0 if the deadline has passed
-    document.getElementById('day').innerHTML = 0;
-    document.getElementById('hour').innerHTML = 0;
-    document.getElementById('minute').innerHTML = 0;
-    document.getElementById('second').innerHTML = 0;
+    $('#day').html(lpadDate(0));
+    $('#hour').html(lpadDate(0));
+    $('#minute').html(lpadDate(0));
   } else {
     // Calculate days, hours, minutes, and seconds if the deadline has not passed
     let days = Math.floor(t / (1000 * 60 * 60 * 24));

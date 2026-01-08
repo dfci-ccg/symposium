@@ -20,6 +20,28 @@ Promise.all([navLoaded, bannerLoaded, footerLoaded])
     );
   })
   .then(() => {
+    return Promise.all(
+      VIGNETTE_SPEAKERS.map(({ institute, name, title }) =>
+        appendPartial('#clinical-vignettes-container', 'speaker.html', ($el) => {
+          $el.find('.name').text(name);
+          $el.find('.title').text(title);
+          $el.find('.institute').text(institute);
+        })
+      )
+    );
+  })
+  .then(() => {
+    return Promise.all(
+      STUDIES_SPEAKERS.map(({ institute, name, title }) =>
+        appendPartial('#research-studies-container', 'speaker.html', ($el) => {
+          $el.find('.name').text(name);
+          $el.find('.title').text(title);
+          $el.find('.institute').text(institute);
+        })
+      )
+    );
+  })
+  .then(() => {
     $('.deadline-day').html(DEADLINE_DATE_STRING);
     $('.deadline-short-day').html(DEADLINE_SHORT_DATE_STRING);
     $('.deadline-year').html(DEADLINE_DATE.getFullYear());
@@ -31,14 +53,4 @@ Promise.all([navLoaded, bannerLoaded, footerLoaded])
     $('a.registration').attr('href', REGISTRATION_HREF);
     $('a.agenda').attr('href', AGENDA_HREF);
     $('a.about').attr('href', ABOUT_HREF);
-
-    // Webcast buttons
-    $('button.morning-webcast').prop('disabled', false);
-    $('button.morning-webcast').on('click', () => {
-      window.location.href = MORNING_WEBCAST_HREF;
-    });
-    $('button.afternoon-webcast').prop('disabled', false);
-    $('button.afternoon-webcast').on('click', () => {
-      window.location.href = AFTERNOON_WEBCAST_HREF;
-    });
   });
