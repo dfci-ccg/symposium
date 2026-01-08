@@ -1,0 +1,38 @@
+const day = 'March 20, 2026';
+const time = '08:30:00';
+const deadline = new Date(`${day} ${time}`).getTime();
+
+/**
+ * Loading in days + time for deadlines
+ */
+$(function () {
+  $('#deadline-day').html(day);
+});
+
+
+let x = setInterval(function () {
+  let now = new Date().getTime();
+  let t = deadline - now;
+
+  // Check if the deadline has passed
+  if (t < 0) {
+    clearInterval(x); // Stop the countdown
+    // Set all time units to 0 if the deadline has passed
+    document.getElementById('day').innerHTML = 0;
+    document.getElementById('hour').innerHTML = 0;
+    document.getElementById('minute').innerHTML = 0;
+    document.getElementById('second').innerHTML = 0;
+  } else {
+    // Calculate days, hours, minutes, and seconds if the deadline has not passed
+    let days = Math.floor(t / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+    // Update countdown display
+    document.getElementById('day').innerHTML = days;
+    document.getElementById('hour').innerHTML = hours;
+    document.getElementById('minute').innerHTML = minutes;
+    document.getElementById('second').innerHTML = seconds;
+  }
+}, 300);
