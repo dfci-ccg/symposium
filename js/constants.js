@@ -35,7 +35,7 @@ const DEADLINE_DATE_STRING = formatFullDate(DEADLINE_DATE);
 /**
  * Only contains month and day
  */
-const DEADLINE_SHORT_DATE_STRING = formatFullDate(DEADLINE_DATE);
+const DEADLINE_SHORT_DATE_STRING = formatOnlyMonthDay(DEADLINE_DATE);
 const LIVESTREAM_TIME = addMinutesAndFormat(DEADLINE_DATE, 30);
 const LOCATION = 'Jimmy Fund Auditorium';
 const LOCATION_ADDRESS = '35 Binney Street, Boston, MA 02115';
