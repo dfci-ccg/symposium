@@ -115,5 +115,5 @@ const GOLD_SPONSORS = [
 const SILVER_SPONSORS = [
   { name: 'miltenyi', img: 'miltenyi.png' },
   { name: 'covaris', img: 'covaris.png' },
-  { name: 'neb', img: 'neb.jpg' },
+  { name: 'neb', img: 'neb.png' },
 ];
