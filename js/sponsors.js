@@ -5,6 +5,7 @@ Promise.all([])
         return () =>
           appendPartial('.gold .sponsor-list', 'sponsor.html', ($imgEl) => {
             $imgEl.attr('src', `img/sponsor/${img}`);
+            $imgEl.width(GOLD_WIDTH);
             $imgEl.attr('alt', name);
           });
       })
@@ -16,6 +17,7 @@ Promise.all([])
         return () =>
           appendPartial('.silver .sponsor-list', 'sponsor.html', ($imgEl) => {
             $imgEl.attr('src', `img/sponsor/${img}`);
+            $imgEl.width(SILVER_WIDTH);
             $imgEl.attr('alt', name);
           });
       })

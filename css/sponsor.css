@@ -11,19 +11,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  }
-  
+}
+
 .sponsor-title {
   font-weight: 600;
-  font-size: 24px;;
+  font-size: 24px;
+  z-index: 10;
 }
 
 .sponsor-list {
-  padding: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  column-gap: 50px;
 }
 
 .gold {

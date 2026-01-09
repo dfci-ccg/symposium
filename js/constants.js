@@ -111,9 +111,11 @@ const GOLD_SPONSORS = [
   { name: 'illumina', img: 'illumina.png' },
   { name: 'roche', img: 'roche.png' },
 ];
+const GOLD_WIDTH = '250px';
 
 const SILVER_SPONSORS = [
   { name: 'miltenyi', img: 'miltenyi.png' },
   { name: 'covaris', img: 'covaris.png' },
   { name: 'neb', img: 'neb.png' },
 ];
+const SILVER_WIDTH = '180px';
