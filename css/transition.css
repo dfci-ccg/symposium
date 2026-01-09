@@ -1,0 +1,10 @@
+body {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.loaded {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.1s ease;
+}

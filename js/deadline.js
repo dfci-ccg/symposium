@@ -1,12 +1,13 @@
 /**
  * Adds left padding of 0s to dates components.
- * @param {*} num 
- * @returns 
+ * @param {*} num
+ * @returns
  */
 function lpadDate(num) {
-  return num.toString().padStart(2, "0");
+  return num.toString().padStart(2, '0');
 }
-let x = setInterval(function () {
+
+function calculateDeadline() {
   let now = new Date().getTime();
   let t = DEADLINE_DATE.getTime() - now;
 
@@ -30,4 +31,8 @@ let x = setInterval(function () {
     $('#minute').html(lpadDate(minutes));
     // $('#second').html(lpadDate(seconds));
   }
-}, 300);
+}
+let x = setInterval(calculateDeadline, 400);
+$(function () {
+  calculateDeadline();
+})

@@ -44,3 +44,67 @@ function appendPartial(selector, partial, callback) {
       .fail(reject);
   });
 }
+/**
+ * Similar to append partial, but instead prepends partial HTML
+ * @param {*} selector 
+ * @param {*} partial 
+ * @param {*} callback 
+ * @returns 
+ */
+function prependPartial(selector, partial, callback) {
+  return new Promise((resolve, reject) => {
+    $.get(`partials/${partial}`)
+      .done((html) => {
+        const $el = $(html);
+        if (callback) {
+          callback($el);
+        }
+        if (!$(selector).length) {
+          console.warn(`cannot find selector: '${selector}'`);
+          resolve();
+          return;
+        }
+        $(selector).prepend($el);
+        resolve();
+      })
+      .fail(reject);
+  });
+}
+
+/**
+ * Loads the values of constants into the css classes
+ */
+function loadConstants() {
+  $('.deadline-day').html(DEADLINE_DATE_STRING);
+  $('.deadline-short-day').html(DEADLINE_SHORT_DATE_STRING);
+  $('.deadline-year').html(DEADLINE_DATE.getFullYear());
+  $('.location').html(LOCATION);
+  $('.location-address').html(LOCATION_ADDRESS);
+  $('.livestream-time').html(LIVESTREAM_TIME);
+}
+
+/**
+ * Loads in href
+ */
+function loadHrefs() {
+  $('a.registration').attr('href', REGISTRATION_HREF);
+  $('a.agenda').attr('href', AGENDA_HREF);
+  $('a.about').attr('href', ABOUT_HREF);
+}
+
+/**
+ * Because we dynamically load in the elements this can be result in a flashing motion
+ * as a result to temper this we can just hide the body until we want to show it.
+ * 
+ * I would recommend calling this at the end of a longer load.
+ */
+function showHTMLBody() {
+  $('body').addClass('loaded');
+}
+
+async function loadSequentially(tasks) {
+  for (const task of tasks) {
+    const result = await task(); 
+    console.log(result);
+  }
+}
