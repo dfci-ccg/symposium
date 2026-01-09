@@ -30,11 +30,11 @@ Promise.all([bannerLoaded])
     loadHrefs();
 
     // Webcast buttons
-    $('button.morning-webcast').prop('disabled', false);
+    $('button.morning-webcast').prop('disabled', !MORNING_WEBCAST);
     $('button.morning-webcast').on('click', () => {
       window.location.href = MORNING_WEBCAST_HREF;
     });
-    $('button.afternoon-webcast').prop('disabled', false);
+    $('button.afternoon-webcast').prop('disabled', !MORNING_WEBCAST);
     $('button.afternoon-webcast').on('click', () => {
       window.location.href = AFTERNOON_WEBCAST_HREF;
     });

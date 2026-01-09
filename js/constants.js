@@ -15,6 +15,9 @@ const ABOUT_HREF =
   'https://www.dana-farber.org/research/departments-centers-and-labs/integrative-research-centers/center-for-cancer-genome-discovery/';
 const REGISTRATION_HREF = 'https://forms.gle/ZCZWY65VEQ45zsNp6';
 const AGENDA_HREF = `agendas/${DEADLINE_DATE.getFullYear()}.pdf`;
+const MORNING_WEBCAST = false;
+const AFTERNOON_WEBCAST = false;
+
 const MORNING_WEBCAST_HREF =
   'https://mgb.mediasite.com/Mediasite/Play/ee63982960824edea40b96ac3d02db481d';
 const AFTERNOON_WEBCAST_HREF =
