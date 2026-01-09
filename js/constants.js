@@ -113,6 +113,7 @@ const GOLD_SPONSORS = [
   { name: 'ultima', img: 'ultima.png' },
   { name: 'illumina', img: 'illumina.png' },
   { name: 'roche', img: 'roche.png' },
+  { name: 'takara', img: 'takara.jpg'}
 ];
 const GOLD_WIDTH = '250px';
 
