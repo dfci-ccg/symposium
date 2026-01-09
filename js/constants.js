@@ -64,7 +64,7 @@ const VIGNETTE_SPEAKERS = [
   },
   {
     name: 'Charlene Mantia, MD',
-    title: 'Instructor in Medicine; Genitourinary Medical Oncologist',
+    title: 'Instructor in Medicine, Genitourinary Medical Oncologist',
     institute: 'HMS, DFCI',
   },
 ];
