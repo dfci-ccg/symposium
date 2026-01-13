@@ -109,17 +109,17 @@ const STUDIES_SPEAKERS = [
 ];
 
 const GOLD_SPONSORS = [
-  { name: 'idt', img: 'idt.png' },
-  { name: 'ultima', img: 'ultima.png' },
-  { name: 'illumina', img: 'illumina.png' },
-  { name: 'roche', img: 'roche.png' },
-  { name: 'takara', img: 'takara.jpg'}
+  { name: 'idt', img: 'idt.png', link: 'https://www.idtdna.com/page' },
+  { name: 'ultima', img: 'ultima.png', link: 'https://www.ultimagenomics.com/' },
+  { name: 'illumina', img: 'illumina.png', link: 'https://www.illumina.com/' },
+  { name: 'roche', img: 'roche.png', link: 'https://www.roche.com/' },
+  { name: 'takara', img: 'takara.jpg', link: 'https://www.takarabio.com/'}
 ];
 const GOLD_WIDTH = '250px';
 
 const SILVER_SPONSORS = [
-  { name: 'miltenyi', img: 'miltenyi.png' },
-  { name: 'covaris', img: 'covaris.png' },
-  { name: 'neb', img: 'neb.png' },
+  { name: 'miltenyi', img: 'miltenyi.png', link: 'https://www.miltenyibiotec.com/' },
+  { name: 'covaris', img: 'covaris.png', link: 'https://www.covaris.com/' },
+  { name: 'neb', img: 'neb.png', link: 'https://www.neb.com/' },
 ];
 const SILVER_WIDTH = '180px';
