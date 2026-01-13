@@ -34,6 +34,7 @@ Promise.all([bannerLoaded])
     $('button.morning-webcast').on('click', () => {
       window.location.href = MORNING_WEBCAST_HREF;
     });
+    
     $('button.afternoon-webcast').prop('disabled', !MORNING_WEBCAST);
     $('button.afternoon-webcast').on('click', () => {
       window.location.href = AFTERNOON_WEBCAST_HREF;

@@ -1,16 +1,10 @@
-window.onscroll = function () {
-  // if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-  //   document.getElementById('scroll-button').style.display = 'block';
-  // } else {
-  //   document.getElementById('scroll-button').style.display = 'none';
-  // }
-};
-
-
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
+function onClickHandler() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-appendPartial('body', 'scroll.html');
+const scrollLoaded = appendPartial('body', 'scroll.html');
+Promise.all([scrollLoaded]).then(() => {
+  $('#scroll-button').click(onClickHandler);
+})
