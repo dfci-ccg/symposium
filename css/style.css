@@ -6,17 +6,13 @@
  * Made By MaterializeCSS.com
  */
 
-a[disabled="disabled"] {
+a[disabled='disabled'] {
   pointer-events: none;
 }
- 
+
 nav ul a,
 nav .brand-logo {
   color: #444;
-}
-
-p {
-  line-height: 2rem;
 }
 
 .sidenav-trigger {
@@ -25,31 +21,284 @@ p {
 
 .parallax-container {
   min-height: 380px;
-  line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, 0.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
 
-@media only screen and (max-width : 992px) {
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
   }
+
   #index-banner .section {
     top: 10%;
   }
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width: 600px) {
   #index-banner .section {
     top: 0;
   }
 }
 
-#clockdiv{
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin-top: 50px;
+  
+}
+
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+/* =============================================================================
+      My CSS
+      ========================================================================== */
+
+.js-count-particles {
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background-color: #3b3c64;
+  background-image: 'genes.jpg';
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* CSS to set the background gif */
+#index-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensures the gfg container (which holds the logo) is centered in the container */
+.gfg {
+  display: flex;
+  /* Enables flexbox within the gfg container */
+  justify-content: center;
+  /* Centers the logo horizontally */
+  align-items: center;
+  /* Centers the logo vertically */
+  max-width: 100%;
+  text-align: center;
+  width: 100%;
+  /* Ensures it takes up the full width of its parent */
+  height: 100%;
+  /* Ensures it takes up the full height of its parent */
+}
+
+/* Ensures the logo is scaled properly */
+img {
+  max-width: 100%;
+  /* Logo will scale down for smaller screen sizes */
+  height: auto;
+  /* Maintains aspect ratio of the logo */
+  display: block;
+  /* Ensures the image is treated as a block-level element */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+#countdown {
   font-family: sans-serif;
   color: #fff;
   display: inline-block;
@@ -58,92 +307,22 @@ p {
   font-size: 30px;
 }
 
-#clockdiv > div{
+#countdown > div {
   padding: 10px;
   border-radius: 3px;
   background: rgb(100, 104, 117);
   display: inline-block;
 }
 
-#clockdiv div > span{
+#countdown div > span {
   padding: 15px;
   border-radius: 3px;
   background: rgb(78, 83, 88);
   display: inline-block;
 }
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
+#countdown .label {
+  font-size: small;
+  padding: 7px;
 }
 
-footer.page-footer {
-  margin: 0;
-}
 
-/* =============================================================================
-   HTML5 CSS Reset Minified - Eric Meyer
-   ========================================================================== */
-
-   html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
-   body{line-height:1}
-   article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-   nav ul{list-style:none}
-   blockquote,q{quotes:none}
-   blockquote:before,blockquote:after,q:before,q:after{content:none}
-   a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
-   mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
-   del{text-decoration:line-through}
-   abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
-   table{border-collapse:collapse;border-spacing:0}
-   hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
-   input,select{vertical-align:middle}
-   li{list-style:none}
-   
-   
-   /* =============================================================================
-      My CSS
-      ========================================================================== */
-   
-   
-   
-   .js-count-particles{
-     font-size: 1.1em;
-   }
-   
-   #stats,
-   .count-particles{
-     -webkit-user-select: none;
-     margin-top: 5px;
-     margin-left: 5px;
-   }
-   
-   #stats{
-     border-radius: 3px 3px 0 0;
-     overflow: hidden;
-   }
-   
-   .count-particles{
-     border-radius: 0 0 3px 3px;
-   }
-   
-   
-   /* ---- particles.js container ---- */
-   
-   #particles-js{
-     width: 100%;
-     height: 100%;
-     background-color: #3b3c64;
-     background-image: genes.jpg;
-     background-size: cover;
-     background-position: 50% 50%;
-     background-repeat: no-repeat;
-   }
-
-   
-
-
-
-   

@@ -1,0 +1,35 @@
+#sponsors-container {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sponsors-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-title {
+  font-weight: 600;
+  font-size: 24px;
+  z-index: 10;
+}
+
+.sponsor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.gold {
+  color: #f9a825;
+}
+
+.silver {
+  color: #9e9e9e;
+}

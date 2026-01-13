@@ -1,0 +1,46 @@
+#keynote-speakers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+.keynote-speaker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+#keynote-title {
+  font-size: 26px;
+  padding: 20px;
+  text-align: center;
+}
+
+#keynote-speakers-container .caption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#keynote-speakers-container .speaker {
+  font-weight: bold;
+}
+
+#keynote-speakers-container .institute {
+  font-weight: bold;
+}
+
+#keynote-speakers-container .title {
+  color: #9e9e9e;
+  font-style: italic;
+}
+
+#keynote-speakers-container > .keynote-speaker-container:nth-of-type(odd) .speaker {
+  color: #1e88e5;
+}
+
+#keynote-speakers-container > .keynote-speaker-container:nth-of-type(even) .speaker {
+  color: #fb8c00;
+}
