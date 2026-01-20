@@ -121,6 +121,7 @@ const SILVER_SPONSORS = [
   { name: 'miltenyi', img: 'miltenyi.png', link: 'https://www.miltenyibiotec.com/' },
   { name: 'covaris', img: 'covaris.png', link: 'https://www.covaris.com/' },
   { name: 'neb', img: 'neb.png', link: 'https://www.neb.com/' },
+  { name: '10x', img: '10x.png', link: 'https://www.10xgenomics.com/' },
   { name: 'hamilton', img: 'hamilton.jpg', link: 'https://www.hamiltoncompany.com/' },
 ];
-const SILVER_WIDTH = '180px';
+const SILVER_WIDTH = '170px';
