@@ -113,7 +113,8 @@ const GOLD_SPONSORS = [
   { name: 'ultima', img: 'ultima.png', link: 'https://www.ultimagenomics.com/' },
   { name: 'illumina', img: 'illumina.png', link: 'https://www.illumina.com/' },
   { name: 'roche', img: 'roche.png', link: 'https://www.roche.com/' },
-  { name: 'takara', img: 'takara.jpg', link: 'https://www.takarabio.com/'}
+  { name: 'takara', img: 'takara.jpg', link: 'https://www.takarabio.com/'},
+  { name: 'agilent', img: 'agilent.png', link: 'https://www.agilent.com/'},
 ];
 const GOLD_WIDTH = '250px';
 
