@@ -124,5 +124,6 @@ const SILVER_SPONSORS = [
   { name: 'neb', img: 'neb.png', link: 'https://www.neb.com/' },
   { name: '10x', img: '10x.png', link: 'https://www.10xgenomics.com/' },
   { name: 'hamilton', img: 'hamilton.jpg', link: 'https://www.hamiltoncompany.com/' },
+  { name: 'millipore', img: 'millipore.jpg', link: 'https://www.sigmaaldrich.com/'}
 ];
 const SILVER_WIDTH = '170px';
