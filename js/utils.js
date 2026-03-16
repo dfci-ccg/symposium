@@ -1,12 +1,30 @@
+function ordinal(n) {
+  var s = ["th", "st", "nd", "rd"];
+  var v = n%100;
+  return n + (s[(v-20)%10] || s[v] || s[0]);
+}
+function formatLuxonMonthDayWithOrdinal(luxon_dt) {
+  const monthDay = luxon_dt.toFormat('MMMM ') + ordinal(luxon_dt.day)
+  return monthDay
+}
+function formatLuxonFullDateWithOrdinal(luxon_dt) {
+  return formatLuxonMonthDayWithOrdinal(luxon_dt) + luxon_dt.toFormat(', yyyy')
+}
+
+/**
+ * Adds minutes to the luxon datetime and then returns a formatted string of the time.
+ * @param {*} luxon_dt 
+ * @param {*} minutesToAdd 
+ * @returns 
+ */
+function formatLuxonTime(luxon_dt, minutesToAdd) {
+  return luxon_dt.plus({ minutes: minutesToAdd }).toFormat('h:mm a');
+}
+
 function formatDateWithOrdinal(date) {
   const day = date.getDate();
 
-  let suffix = 'th';
-  if (day % 10 === 1 && day !== 11) suffix = 'st';
-  else if (day % 10 === 2 && day !== 12) suffix = 'nd';
-  else if (day % 10 === 3 && day !== 13) suffix = 'rd';
-
-  return `${day}${suffix}`;
+  return ordinal(day)
 }
 function formatOnlyMonthDay(date) {
   const day = formatDateWithOrdinal(date);
@@ -109,7 +127,7 @@ function prependPartial(selector, partial, callback) {
 function loadConstants() {
   $('.deadline-day').html(DEADLINE_DATE_STRING);
   $('.deadline-short-day').html(DEADLINE_SHORT_DATE_STRING);
-  $('.deadline-year').html(DEADLINE_DATE.getFullYear());
+  $('.deadline-year').html(DEADLINE_DT.toFormat('yyyy'));
   $('.location').html(LOCATION);
   $('.location-address').html(LOCATION_ADDRESS);
   $('.livestream-time').html(LIVESTREAM_TIME);

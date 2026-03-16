@@ -1,14 +1,23 @@
-// Be careful march has a timezone switch (daylight saving time)...
-const TIMEZONE_OFFSET = '-04:00' // EDT
-// const TIMEZONE_OFFSET = '-05:00' // EST
+const { DateTime, Duration, Interval } = luxon;
+
+const DEADLINE_DT = DateTime.fromObject(
+  { month: 3, day: 20, year: 2026, hour: 8, minute: 30 },
+  { zone: 'America/New_York' },
+);
+
+const TIMEZONE_OFFSET = '-04:00';
+// Be careful march has a timezone switch (daylight saving time)...probably should switch to luxon in the future
 const DEADLINE_DATE_STR = '2026-03-20';
-const DEADLINE_DATE = new Date(`${DEADLINE_DATE_STR}T08:30:00${TIMEZONE_OFFSET}`);
-const DEADLINE_DATE_STRING = formatFullDate(DEADLINE_DATE);
+
 /**
- * Only contains month and day
+ * Full month + day + Full year string (e.g. March 20th, 2026).
  */
-const DEADLINE_SHORT_DATE_STRING = formatOnlyMonthDay(DEADLINE_DATE);
-const LIVESTREAM_TIME = addMinutesAndFormat(DEADLINE_DATE, 30);
+const DEADLINE_DATE_STRING = formatLuxonFullDateWithOrdinal(DEADLINE_DT);
+/**
+ * Only contains month and day with ordinal suffix (e.g. March 20th)
+ */
+const DEADLINE_SHORT_DATE_STRING = formatLuxonMonthDayWithOrdinal(DEADLINE_DT);
+const LIVESTREAM_TIME = formatLuxonTime(DEADLINE_DT, 30);
 const LOCATION = 'Jimmy Fund Auditorium';
 const LOCATION_ADDRESS = '35 Binney Street, Boston, MA 02115';
 
@@ -18,14 +27,18 @@ const LOCATION_ADDRESS = '35 Binney Street, Boston, MA 02115';
 const ABOUT_HREF =
   'https://www.dana-farber.org/research/departments-centers-and-labs/integrative-research-centers/center-for-cancer-genome-discovery/';
 const REGISTRATION_HREF = 'https://forms.gle/ZCZWY65VEQ45zsNp6';
-const AGENDA_HREF = `agendas/${DEADLINE_DATE.getFullYear()}.pdf`;
+const AGENDA_HREF = `agendas/${DEADLINE_DT.toFormat('yyyy')}.pdf`;
 
 const MORNING_WEBCAST_HREF =
   'https://mgb.mediasite.com/Mediasite/Play/c563ddf3d6ee4f1f8cd80745f90d448e1d';
 const AFTERNOON_WEBCAST_HREF =
-'https://mgb.mediasite.com/Mediasite/Play/ec354e33fafe4e9aaf724cbea207bda31d';
-const MORNING_WEBCAST_DEADLINE = new Date(`${DEADLINE_DATE_STR}T08:30:00${TIMEZONE_OFFSET}`);
-const AFTERNOON_WEBCAST_DEADLINE = new Date(`${DEADLINE_DATE_STR}T13:00:00${TIMEZONE_OFFSET}`);
+  'https://mgb.mediasite.com/Mediasite/Play/ec354e33fafe4e9aaf724cbea207bda31d';
+const MORNING_WEBCAST_DEADLINE = new Date(
+  `${DEADLINE_DATE_STR}T08:30:00${TIMEZONE_OFFSET}`,
+);
+const AFTERNOON_WEBCAST_DEADLINE = new Date(
+  `${DEADLINE_DATE_STR}T13:00:00${TIMEZONE_OFFSET}`,
+);
 
 /**
  * Speakers
@@ -114,20 +127,36 @@ const STUDIES_SPEAKERS = [
 
 const GOLD_SPONSORS = [
   { name: 'idt', img: 'idt.png', link: 'https://www.idtdna.com/page' },
-  { name: 'ultima', img: 'ultima.png', link: 'https://www.ultimagenomics.com/' },
+  {
+    name: 'ultima',
+    img: 'ultima.png',
+    link: 'https://www.ultimagenomics.com/',
+  },
   { name: 'illumina', img: 'illumina.png', link: 'https://www.illumina.com/' },
   { name: 'roche', img: 'roche.png', link: 'https://www.roche.com/' },
-  { name: 'takara', img: 'takara.jpg', link: 'https://www.takarabio.com/'},
-  { name: 'agilent', img: 'agilent.png', link: 'https://www.agilent.com/'},
+  { name: 'takara', img: 'takara.jpg', link: 'https://www.takarabio.com/' },
+  { name: 'agilent', img: 'agilent.png', link: 'https://www.agilent.com/' },
 ];
 const GOLD_WIDTH = '250px';
 
 const SILVER_SPONSORS = [
-  { name: 'miltenyi', img: 'miltenyi.png', link: 'https://www.miltenyibiotec.com/' },
+  {
+    name: 'miltenyi',
+    img: 'miltenyi.png',
+    link: 'https://www.miltenyibiotec.com/',
+  },
   { name: 'covaris', img: 'covaris.png', link: 'https://www.covaris.com/' },
   { name: 'neb', img: 'neb.png', link: 'https://www.neb.com/' },
   { name: '10x', img: '10x.png', link: 'https://www.10xgenomics.com/' },
-  { name: 'hamilton', img: 'hamilton.jpg', link: 'https://www.hamiltoncompany.com/' },
-  { name: 'millipore', img: 'millipore.jpg', link: 'https://www.sigmaaldrich.com/'}
+  {
+    name: 'hamilton',
+    img: 'hamilton.jpg',
+    link: 'https://www.hamiltoncompany.com/',
+  },
+  {
+    name: 'millipore',
+    img: 'millipore.jpg',
+    link: 'https://www.sigmaaldrich.com/',
+  },
 ];
 const SILVER_WIDTH = '170px';

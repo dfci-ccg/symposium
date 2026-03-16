@@ -4,31 +4,25 @@
  * @returns
  */
 function lpadDate(num) {
-  return num.toString().padStart(2, '0');
+  return Math.floor(num).toString().padStart(2, '0');
 }
 
 function calculateDeadline() {
-  let now = new Date().getTime();
-  let t = DEADLINE_DATE.getTime() - now;
+  const diff = DEADLINE_DT.diffNow(['days', 'hours', 'minutes'])
+  const passedDeadline = DEADLINE_DT.diffNow('days').toObject().days < 0;
 
   // Check if the deadline has passed
-  if (t < 0) {
+  if (passedDeadline) {
     clearInterval(deadlineInterval); // Stop the countdown
     // Set all time units to 0 if the deadline has passed
     $('#day').html(lpadDate(0));
     $('#hour').html(lpadDate(0));
     $('#minute').html(lpadDate(0));
   } else {
-    // Calculate days, hours, minutes, and seconds if the deadline has not passed
-    let days = Math.floor(t / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-    // let seconds = Math.floor((t % (1000 * 60)) / 1000);
-
     // Update countdown display
-    $('#day').html(lpadDate(days));
-    $('#hour').html(lpadDate(hours));
-    $('#minute').html(lpadDate(minutes));
+    $('#day').html(lpadDate(diff.days));
+    $('#hour').html(lpadDate(diff.hours));
+    $('#minute').html(lpadDate(diff.minutes));
     // $('#second').html(lpadDate(seconds));
   }
 }
