@@ -5,10 +5,6 @@ const DEADLINE_DT = DateTime.fromObject(
   { zone: 'America/New_York' },
 );
 
-const TIMEZONE_OFFSET = '-04:00';
-// Be careful march has a timezone switch (daylight saving time)...probably should switch to luxon in the future
-const DEADLINE_DATE_STR = '2026-03-20';
-
 /**
  * Full month + day + Full year string (e.g. March 20th, 2026).
  */
