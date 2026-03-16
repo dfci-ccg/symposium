@@ -30,15 +30,27 @@ Promise.all([bannerLoaded])
     loadHrefs();
 
     // Webcast buttons
-    $('button.morning-webcast').prop('disabled', !MORNING_WEBCAST);
+    $('button.morning-webcast').prop('disabled', true);
     $('button.morning-webcast').on('click', () => {
       window.location.href = MORNING_WEBCAST_HREF;
     });
     
-    $('button.afternoon-webcast').prop('disabled', !MORNING_WEBCAST);
+    $('button.afternoon-webcast').prop('disabled', true);
     $('button.afternoon-webcast').on('click', () => {
       window.location.href = AFTERNOON_WEBCAST_HREF;
     });
 
     showHTMLBody();
   });
+
+function enableWebcasts() {
+  const now = new Date();
+  if (now >= MORNING_WEBCAST_DEADLINE) {
+    $('button.morning-webcast').prop('disabled', false);
+  }
+  if (now >= AFTERNOON_WEBCAST_HREF) {
+    $('button.afternoon-webcast').prop('disabled', false);
+  }
+}
+
+let enableButtons = setInterval(enableWebcasts, 400);

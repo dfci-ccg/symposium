@@ -13,7 +13,7 @@ function calculateDeadline() {
 
   // Check if the deadline has passed
   if (t < 0) {
-    clearInterval(x); // Stop the countdown
+    clearInterval(deadlineInterval); // Stop the countdown
     // Set all time units to 0 if the deadline has passed
     $('#day').html(lpadDate(0));
     $('#hour').html(lpadDate(0));
@@ -32,7 +32,7 @@ function calculateDeadline() {
     // $('#second').html(lpadDate(seconds));
   }
 }
-let x = setInterval(calculateDeadline, 400);
+let deadlineInterval = setInterval(calculateDeadline, 400);
 $(function () {
   calculateDeadline();
 })

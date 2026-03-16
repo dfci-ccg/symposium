@@ -1,4 +1,8 @@
-const DEADLINE_DATE = new Date(`March 20, 2026 08:30:00`);
+// Be careful march has a timezone switch (daylight saving time)...
+const TIMEZONE_OFFSET = '-04:00' // EDT
+// const TIMEZONE_OFFSET = '-05:00' // EST
+const DEADLINE_DATE_STR = '2026-03-20';
+const DEADLINE_DATE = new Date(`${DEADLINE_DATE_STR}T08:30:00${TIMEZONE_OFFSET}`);
 const DEADLINE_DATE_STRING = formatFullDate(DEADLINE_DATE);
 /**
  * Only contains month and day
@@ -15,13 +19,13 @@ const ABOUT_HREF =
   'https://www.dana-farber.org/research/departments-centers-and-labs/integrative-research-centers/center-for-cancer-genome-discovery/';
 const REGISTRATION_HREF = 'https://forms.gle/ZCZWY65VEQ45zsNp6';
 const AGENDA_HREF = `agendas/${DEADLINE_DATE.getFullYear()}.pdf`;
-const MORNING_WEBCAST = false;
-const AFTERNOON_WEBCAST = false;
 
 const MORNING_WEBCAST_HREF =
-  'https://mgb.mediasite.com/Mediasite/Play/ee63982960824edea40b96ac3d02db481d';
+  'https://mgb.mediasite.com/Mediasite/Play/c563ddf3d6ee4f1f8cd80745f90d448e1d';
 const AFTERNOON_WEBCAST_HREF =
-  'https://mgb.mediasite.com/Mediasite/Play/c2aad827cf2e42a1b807b1b274abc6b21d';
+'https://mgb.mediasite.com/Mediasite/Play/ec354e33fafe4e9aaf724cbea207bda31d';
+const MORNING_WEBCAST_DEADLINE = new Date(`${DEADLINE_DATE_STR}T08:30:00${TIMEZONE_OFFSET}`);
+const AFTERNOON_WEBCAST_DEADLINE = new Date(`${DEADLINE_DATE_STR}T13:00:00${TIMEZONE_OFFSET}`);
 
 /**
  * Speakers
