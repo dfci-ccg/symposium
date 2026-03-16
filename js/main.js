@@ -44,11 +44,10 @@ Promise.all([bannerLoaded])
   });
 
 function enableWebcasts() {
-  const now = new Date();
-  if (now >= MORNING_WEBCAST_DEADLINE) {
+  if (MORNING_WEBCAST_DEADLINE.diffNow('days').toObject().days < 0) {
     $('button.morning-webcast').prop('disabled', false);
   }
-  if (now >= AFTERNOON_WEBCAST_HREF) {
+  if (AFTERNOON_WEBCAST_DEADLINE.diffNow('days').toObject().days < 0) {
     $('button.afternoon-webcast').prop('disabled', false);
   }
 }

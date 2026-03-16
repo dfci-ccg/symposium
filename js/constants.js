@@ -33,12 +33,8 @@ const MORNING_WEBCAST_HREF =
   'https://mgb.mediasite.com/Mediasite/Play/c563ddf3d6ee4f1f8cd80745f90d448e1d';
 const AFTERNOON_WEBCAST_HREF =
   'https://mgb.mediasite.com/Mediasite/Play/ec354e33fafe4e9aaf724cbea207bda31d';
-const MORNING_WEBCAST_DEADLINE = new Date(
-  `${DEADLINE_DATE_STR}T08:30:00${TIMEZONE_OFFSET}`,
-);
-const AFTERNOON_WEBCAST_DEADLINE = new Date(
-  `${DEADLINE_DATE_STR}T13:00:00${TIMEZONE_OFFSET}`,
-);
+const MORNING_WEBCAST_DEADLINE = DEADLINE_DT.set({hour: 9, minute: 0});
+const AFTERNOON_WEBCAST_DEADLINE = DEADLINE_DT.set({hour: 13, minute: 0});
 
 /**
  * Speakers
