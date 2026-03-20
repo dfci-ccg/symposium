@@ -30,7 +30,9 @@ const MORNING_WEBCAST_HREF =
 const AFTERNOON_WEBCAST_HREF =
   'https://mgb.mediasite.com/Mediasite/Play/ec354e33fafe4e9aaf724cbea207bda31d';
 const MORNING_WEBCAST_DEADLINE = DEADLINE_DT.set({hour: 9, minute: 0});
+const END_OF_MORNING_SYMPOSIUM_DEADLINE = DEADLINE_DT.set({hour: 12, minute: 0});
 const AFTERNOON_WEBCAST_DEADLINE = DEADLINE_DT.set({hour: 13, minute: 0});
+const END_OF_SYMPOSIUM_DEADLINE = DEADLINE_DT.set({hour: 16, minute: 40});
 
 /**
  * Speakers

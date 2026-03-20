@@ -34,7 +34,7 @@ Promise.all([bannerLoaded])
     $('button.morning-webcast').on('click', () => {
       window.location.href = MORNING_WEBCAST_HREF;
     });
-    
+
     $('button.afternoon-webcast').prop('disabled', true);
     $('button.afternoon-webcast').on('click', () => {
       window.location.href = AFTERNOON_WEBCAST_HREF;
@@ -43,11 +43,19 @@ Promise.all([bannerLoaded])
     showHTMLBody();
   });
 
+function hitDeadline(deadline) {
+  return deadline.diffNow('days').toObject().days < 0;
+}
+
 function enableWebcasts() {
-  if (MORNING_WEBCAST_DEADLINE.diffNow('days').toObject().days < 0) {
+  $('button.morning-webcast').prop('disabled', true);
+  $('button.afternoon-webcast').prop('disabled', true);
+
+  if (hitDeadline(MORNING_WEBCAST_DEADLINE) && !hitDeadline(END_OF_MORNING_SYMPOSIUM_DEADLINE)) {
     $('button.morning-webcast').prop('disabled', false);
   }
-  if (AFTERNOON_WEBCAST_DEADLINE.diffNow('days').toObject().days < 0) {
+
+  if (hitDeadline(AFTERNOON_WEBCAST_DEADLINE) && !hitDeadline(END_OF_SYMPOSIUM_DEADLINE)) {
     $('button.afternoon-webcast').prop('disabled', false);
   }
 }
