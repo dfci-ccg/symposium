@@ -1,3 +1,8 @@
+const TURN_OFF = true;
+if (TURN_OFF) {
+  document.body.parentNode.removeChild(document.body);
+  document.head.parentNode.removeChild(document.head);
+}
 const { DateTime, Duration, Interval } = luxon;
 
 const DEADLINE_DT = DateTime.fromObject(
